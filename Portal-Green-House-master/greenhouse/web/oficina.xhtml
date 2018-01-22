@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="css/font-awesome.min.css" rel="stylesheet"></link>
+        <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+        <link href="css/templatemo-style.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body>
+        <f:facet name="header">
+            <h:outputText value="#{indexBean.teste.nome}" styleClass="header4"></h:outputText>
+        </f:facet>
+
+        <p:scrollPanel id="detalhe" >
+            <p:outputLabel value="#{indexBean.teste.descricao}" styleClass="paragraph margin-bottom-30" style="text-align: center; width: 100%"></p:outputLabel>
+            
+            <p:outputLabel value="#{indexBean.teste.capacidade}" styleClass="paragraph margin-bottom-30" style="text-align: center; width: 100%"></p:outputLabel>
+
+            <h:panelGrid columns="1" cellpadding="10">
+
+                <p:galleria value="#{indexBean.teste.fotos}" var="image" panelWidth="400" panelHeight="250"  style=" left: 50%; margin-left: -200px;" styleClass="margin-bottom-10">
+                    <p:graphicImage value="#{imageStreamer.img}">
+                        <f:param name="imageid" value="#{image.id}" />
+                    </p:graphicImage>
+                </p:galleria>
+
+                <p:media value="#{indexBean.teste.video}" width="420" height="315" player="flash"/>
+            </h:panelGrid>
+
+        </p:scrollPanel>
+    </h:body>
+</html>
+

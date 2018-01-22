@@ -1,0 +1,670 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Green House - Início</title>
+        <meta name="description" content=""></meta>
+        <meta name="author" content=""></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+        <meta charset="UTF-8"></meta>
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"></link>
+        <link rel="stylesheet" type="text/css" href="css/templatemo-style.css"></link>
+
+
+
+        <!-- JavaScripts -->
+        <script src="javax.faces/jsf.js"></script>
+
+
+        <!--<script src="js/vendor/jquery-1.10.2.min.js"></script>-->
+        <script src="js/vendor/modernizr.min.js"></script>
+
+
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM">
+        </script>
+    </h:head>
+    <h:body>
+
+        <header class="site-header" id="top">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <div class="logo-wrapper">
+                                <a class="navbar-brand" href="#templatemo">
+                                    <p><em>GREEN HOUSE</em></p>
+                                </a>
+                            </div>  
+                        </div>
+                        <div class="collapse navbar-collapse" id="main-menu">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><span></span><a href="#top" class="home">Início</a></li>
+                                <li><span></span><a href="#first-section" class="about">Notícias</a></li>
+                                <li><span></span><a href="#second-section" class="portfolio">Oficinas</a></li>
+                                <li><span></span><a href="#map" class="map">Localização</a></li>
+                                <li><span></span><a href="#third-section" class="contact">Contato</a></li>
+                                <li><span></span><a href="admin/login.jsf" class="home">Entrar</a></li>
+                            </ul>
+                        </div>
+                    </div> 
+                </div>
+            </nav>
+        </header>
+
+
+        <div id="big-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <ul class="main-icons">
+                            <li><a href="http://udesc.br/"><i class="fa fa-university"></i>A UNIVERSIDADE</a></li>
+                            <li><a href="http://ceavi.udesc.br/"><i class="fa fa-cubes"></i>O CEAVI</a></li>
+                            <li><a href="http://www.ceavi.udesc.br/?id=1009"><i class="fa fa-bullseye"></i>O PROJETO</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>               
+        </div>
+
+
+
+        <div id="first-section">
+            <div class="heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="header-section-title">Notícias</h2>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="first-section1">
+            <div class="container">
+                <div class="row">
+                    <div class="triangle"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <section id="cd-timeline" class="cd-container">
+
+
+
+
+                            <!--                                                                                    <div class='cd-timeline-block'>
+                                                                                                                    <div class='cd-timeline-img cd-picture'>
+                                                                                                                        <img src='images/first-icon.png' alt='Picture'></img>
+                                                                                                                    </div>
+                                                                                                                    <div class='cd-timeline-content service-box-content'>
+                                                                                                                        <h2> <i class="fa fa-star"></i> Udesc Ibirama apresenta projeto de extensão sobre estudos ambientais para comunidade nesta terça </h2>
+                                                                                                                        <p>25/06/2016</p>
+                                                                                                                        <p>As ações do projeto de extensão Green House - Laboratório de Estudos Ambientais, do Centro de Educação Superior do Alto Vale do Itajaí (Ceavi), da Universidade do Estado de Santa Catarina (Udesc), serão apresentadas à comunidade acadêmica e externa nesta terça-feira, 14, a partir das 16h30, na casa de enxaimel localizada na sede da unidade, em Ibirama.
+                                                                                                                            foto
+                                                                                                                           
+                                                                                                                        </p>
+                                                                                                                    </div>
+                                                                                                                </div>-->
+
+
+                            <!--                                                                                    <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-picture">
+                                                                                                                        <img src="images/first-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content service-box-content">
+                                                                                                                        <h2> <i class="fa fa-star-o"></i> Free Web Template</h2>
+                                                                                                                        <p>Aqui podemos colocar quantas histórias acreditarmos ser suficientes sobre o Green House.</p>
+                                                                                                                        <p>
+                                                                                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                                                                                        </p>
+                                                                                    
+                                                                                    
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                    
+                                                                                                                <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-movie">
+                                                                                                                        <img src="images/second-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content service-box-content">
+                                                                                                                        <h2>Top Icons</h2>
+                                                                                                                        <p>You can easily <strong>change top icons</strong> by looking at guidelines from <a rel="nofollow" href="http://fontawesome.info/font-awesome-icon-world-map/">Font Awesome</a>. Example: <strong>&lt;i class=&quot;fa fa-camera&quot;&gt;&lt;/i&gt;</strong></p>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                    
+                                                                                                                <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-icon">
+                                                                                                                        <img src="images/third-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content service-box-content">
+                                                                                                                        <h2>Responsive Design</h2>
+                                                                                                                        <p>Vestibulum ante ipsum priminisieru in faucibus orci luctus et ultrices posuere cubilia Curae unserd Etiam nisl dui, commodo sit amet eget, vel turpis. Suspendisse at est purus.</p>
+                                                                                                                    </div>
+                                                                                                                </div> 
+                                                                                    
+                                                                                                                <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-location">
+                                                                                                                        <img src="images/fourth-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content service-box-content">
+                                                                                                                        <h2>Communication</h2>
+                                                                                                                        <p>Phasellus lobortis vitae ipsum vitae luctus. Proin sodales mi a arcu iaculis, in dapibus nunc sodales. Maecenas auctor vel eros a dapibus.</p>
+                                                                                                                    </div>
+                                                                                                                </div>-->
+
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Oficinas</h4>
+                        <p>O que fazemos</p>
+                    </div>   
+                </div>
+            </div>
+        </div>
+
+        <div id="second-section">
+            <div class="heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Atividade recente</h2>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="second-section2">
+            <div class="container">
+                <div class="row">
+                    <div class="triangle"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <!--<section id="cd-timeline-2" class="cd-container">-->
+                        <section style="margin-bottom: 50px;">  
+
+                            <h:form id="form"> 
+
+                                <p:growl id="growl" showDetail="true" />
+
+                                <ui:repeat value="#{indexBean.oficinas}" var="oficina">
+                                    <h:panelGrid columns="2" style="width:100%">
+
+
+
+
+                                        <p:panel style="float: left; width: 600px;" styleClass="cd-timeline-block">
+                                            <p:outputPanel >
+                                                <h:panelGrid columns="1" >
+                                                    <h:outputText value="#{oficina.nome}" style="font-weight: bold; text-align: left; width: 100%;  text-transform: uppercase;" styleClass="paragraph h4"/>
+                                                    <br/>
+                                                    <h:outputText value="#{oficina.descricao}"  style=" text-align: left; margin-bottom: 30px !important; width: 100%;" styleClass="paragraph ds"/>
+                                                    <br/>
+                                                    <p:commandLink update=":form:carDetail" oncomplete="PF('carDialog').show()">
+                                                        <f:setPropertyActionListener value="#{oficina}" target="#{indexBean.teste}" />
+                                                        <h:outputText value="Clique aqui para mais informações"  style=" text-align: left; margin-bottom: 30px !important; width: 100%;" styleClass="paragraph ds"/>
+                                                    </p:commandLink>
+                                                </h:panelGrid>
+                                            </p:outputPanel>
+                                        </p:panel>
+
+
+                                        <p:commandLink update=":form:detalhes" oncomplete="PF('galeria').show();">
+                                            <f:setPropertyActionListener value="#{oficina}" target="#{indexBean.teste}" />
+                                            <p:graphicImage value="#{imageStreamer.image}" height="200px" style="cursor: pointer" alt="#{oficina.nome}" id="img">  
+                                                <f:param name="imageid" value="#{oficina.oficinaid}" />
+                                            </p:graphicImage>
+                                        </p:commandLink>
+                                        <!--                                        <p:overlayPanel id="imgPanel" for="img" showEffect="fade" hideEffect="fade" showEvent="click" hideEvent="mouseover"
+                                                                                                dismissable="false" showCloseIcon="true" onShow="$(document.body).unbind('mousedown.ui-overlay')">
+                                                                                    <p:imageSwitch effect="fade" style="width:400px;height:250px;">
+                                                                                        <ui:repeat value="# {indexBean.teste.fotos}" var="image">
+                                                                                            <p:graphicImage value="# imageStreamer.img}" width="400px">
+                                                                                                <f:param name="imageid" value="# {image.id}" />
+                                                                                            </p:graphicImage>
+                                                                                        </ui:repeat>
+                                                                                    </p:imageSwitch>
+                                                                                </p:overlayPanel>-->
+
+                                        <!--                                        <p:commandLink update=":form:detalhes" oncomplete="PF('galeria').show()">
+                                                                                    <f:setPropertyActionListener value="# {oficina}" target="# {indexBean.teste}" />
+                                                                                    <p:graphicImage value="# {imageStreamer.image}" height="200px" alt="# {oficina.nome}">  
+                                                                                        <f:param name="imageid" value="# {oficina.oficinaid}" />
+                                                                                    </p:graphicImage>
+                                        
+                                                                                </p:commandLink>-->
+
+
+
+
+
+
+
+
+                                    </h:panelGrid>
+
+                                    <hr/>
+                                </ui:repeat>
+
+                                <p:dialog  widgetVar="carDialog" modal="true"  resizable="false" id="carDetail">
+
+                                    <f:facet name="header">
+                                        <p:outputLabel value="#{indexBean.teste.nome}" styleClass="paragraph h4" style="text-align: center; width: 100%"></p:outputLabel>
+                                    </f:facet>
+
+                                    <p:outputPanel style="text-align:center; width: 600px;" >
+
+                                        <p:outputLabel value="#{indexBean.teste.descricao}" styleClass="paragraph margin-bottom-10" style="text-align: center; width: 100%"></p:outputLabel>
+                                        <p:outputLabel value="Capacidade de #{indexBean.teste.capacidade} inscrições" styleClass="paragraph margin-bottom-30" style="text-align: center; width: 100%; font-weight: bold"></p:outputLabel>
+
+                                        <p:panel rendered="#{indexBean.teste.video != null}">
+                                            <iframe width="560" height="315" src="#{indexBean.teste.video}" frameborder="0"></iframe>
+                                        </p:panel>
+
+                                        <p:panel rendered="#{indexBean.teste.evento != null}">
+                                            <a href="#{indexBean.teste.evento}"><p:outputLabel value="Faça sua inscrição através deste link"  styleClass="paragraph margin-bottom-30" style="text-align: center; width: 100%; font-weight: bold"></p:outputLabel></a>        
+                                        </p:panel>
+
+                                    </p:outputPanel>
+                                </p:dialog>
+
+                                <p:dialog header="Mais fotos" widgetVar="galeria" modal="true" showEffect="fade" hideEffect="fade" resizable="false" id="detalhes"  style="width: 500px !important; height: 500px !important;">
+                                    <center>
+                                        <p:galleria value="#{indexBean.teste.fotos}" var="image" style="width: 440px !important; height: 280px !important;">
+                                            <p:graphicImage value="#{imageStreamer.img}" width="400px" height="250px">
+                                                <f:param name="imageid" value="#{image.id}" />
+                                            </p:graphicImage>
+                                        </p:galleria>
+                                    </center>
+                                </p:dialog>
+
+                            </h:form>
+
+                            <!--                            <h:form id="form"> 
+                                                            <ui:repeat value="# {indexBean.oficinas}" var="oficina">
+                                                                <h:panelGrid columns="2" style="width:100%">
+                                                                    <p:commandLink update=":form:detalhe" oncomplete="PF('dialog').show()" >
+                                                                        <f:setPropertyActionListener value="# {oficina}" target="# {indexBean.teste}" />
+                                                                        <p:graphicImage value="# {imageStreamer.image}" height="200px" alt="# {oficina.nome}" >  
+                                                                            <f:param name="imageid" value="# {oficina.oficinaid}" />
+                                                                        </p:graphicImage>
+                                                                    </p:commandLink>
+                            
+                                                                    <p:outputPanel>
+                                                                        <h:panelGrid columns="1" style="padding: 5px !important">
+                                                                            <h:outputText value="# {oficina.nome}" style="font-weight: bold; text-align: left;" styleClass="paragraph ds"/>
+                                                                            <h:outputText value="# {oficina.descricao}"  style=" text-align: left;" styleClass="paragraph ds"/>
+                                                                        </h:panelGrid>
+                                                                    </p:outputPanel>
+                            
+                                                                </h:panelGrid>
+                            
+                            
+                                                            </ui:repeat>
+                            
+                                                            <p:dialog widgetVar="dialog">
+                                                                <p:panel footer="Capacidade: # {indexBean.teste.capacidade}" styleClass="paragraph" id="detalhe">
+                                                                    <f:facet name="header">
+                                                                        <h:outputText value="# {indexBean.teste.nome}" styleClass="header4"></h:outputText>
+                                                                    </f:facet>
+                                                                    <center>
+                                                                        <h:panelGrid columns="1" cellpadding="10">
+                                                                            <p:outputLabel value="# {indexBean.teste.descricao}" styleClass="paragraph margin-bottom-30" style="text-align: center; width: 100%"></p:outputLabel>
+                                                                            <p:galleria value="# {indexBean.teste.fotos}" var="image" panelWidth="400" panelHeight="250"  style=" left: 50%; margin-left: -200px;" styleClass="margin-bottom-10">
+                                                                                <p:graphicImage value="# {imageStreamer.img}">
+                                                                                    <f:param name="imageid" value="# {image.id}" />
+                                                                                </p:graphicImage>
+                                                                            </p:galleria>
+                                                                            <p:media value="# {indexBean.teste.video}" width="420" height="315" player="flash"/>
+                            
+                                                                        </h:panelGrid>
+                                                                    </center>
+                                                                </p:panel>
+                                                            </p:dialog>
+                                                        </h:form>-->
+
+                            <!--                                                        <div class="cd-timeline-block">
+                                                                                        <div class="cd-timeline-img cd-picture">
+                                                                                            <img src="images/camera-icon.png" alt="Picture"></img>
+                                                                                        </div>
+                                                        
+                                                                                        <div class="cd-timeline-content projects">
+                                                                                            <p:graphicImage value="# {imageStreamer.image}" width="400px">
+                                                                                                <f:param name="imageid" value="# {indexBean.teste.oficinaid}" />
+                                                                                            </p:graphicImage>
+                                                                                            <div class="project-content">
+                                                                                                
+                                                                                                <span># {indexBean.teste.capacidade} participantes</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                                                <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-picture">
+                                                                                                                        <img src="images/camera-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content projects">
+                                                                                                                        <img src="images/project-2.jpg" alt=""></img>
+                                                                                                                        <div class="project-content">
+                                                                                                                            <h2>Nullam hendrerit ultrices</h2>
+                                                                                                                            <span>12 December 2084</span>
+                                                                                                                        </div>
+                                                                                    
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                    
+                                                                                                                <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-picture">
+                                                                                                                        <img src="images/camera-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content projects">
+                                                                                                                        <img src="images/project-3.jpg" alt=""></img>
+                                                                                                                        <div class="project-content">
+                                                                                                                            <h2>Quisque mollis diam</h2>
+                                                                                                                            <span>10 December 2084</span>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                    
+                                                                                                                <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-picture">
+                                                                                                                        <img src="images/camera-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content projects">
+                                                                                                                        <img src="images/project-4.jpg" alt=""></img>
+                                                                                                                        <div class="project-content">
+                                                                                                                            <h2>Etiam a ultricies</h2>
+                                                                                                                            <span>30 November 2084</span>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                    
+                                                                                                                <div class="cd-timeline-block">
+                                                                                                                    <div class="cd-timeline-img cd-picture">
+                                                                                                                        <img src="images/camera-icon.png" alt="Picture"></img>
+                                                                                                                    </div>
+                                                                                    
+                                                                                                                    <div class="cd-timeline-content projects">
+                                                                                                                        <img src="images/project-5.jpg" alt=""></img>
+                                                                                                                        <div class="project-content">
+                                                                                                                            <h2>Curabitur interdum</h2>
+                                                                                                                            <span>22 November 2084</span>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>-->
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="map">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Visite!</h4>
+                        <p>Nós ficamos aqui</p>
+                    </div>   
+                </div>
+                <div class="row">
+                    <div class="map-content">
+                        <div id="templatemo-map"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="third-section">
+            <div class="heading">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Entre em contato</h2>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="third-section3">
+            <div class="container">
+                <div class="row">
+                    <div class="triangle"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h:form class="form" >
+
+
+
+                            <p:growl id="ig" showDetail="true" sticky="false" />  
+
+                            <div class="row">
+                                <div class="name col-md-4">
+                                    <p:message for="name" />
+                                </div>
+                                <div class="name col-md-4">
+                                    <p:message for="email" />
+                                </div>
+                                <div class="name col-md-4">
+                                    <p:message for="subject" />
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-md-4 ">
+                                    <h:inputText id="name" a:placeholder="Nome" value="#{indexBean.nome}" required="true" requiredMessage="Campo obrigatório" label="Name" styleClass="borderless input" />
+                                </div>
+                                <div class="col-md-4 ">
+                                    <h:inputText id="email" a:placeholder="E-mail" value="#{indexBean.emailOrigem}" required="true" requiredMessage="Campo obrigatório" label="Email" styleClass="borderless input"/>
+                                </div>
+                                <div class="col-md-4  ">
+                                    <h:inputText id="subject" a:placeholder="Assunto" value="#{indexBean.assunto}" required="true" requiredMessage="Campo obrigatório" label="Assunto" styleClass="borderless input"/>
+                                </div> 
+                            </div>
+                            <div class="row">     
+                                <div class="text col-md-12">
+                                    <p:message for="corpo" />
+                                </div>
+                            </div>  
+                            <div class="row">     
+                                <div class="text col-md-12">
+                                    <h:inputTextarea id="corpo" rows="6" cols="33" value="#{indexBean.corpo}" required="true" requiredMessage="Campo obrigatório" label="Name" styleClass="borderless textarea"/>
+
+                                </div>   
+                            </div>    
+
+                            <div class="submit">
+                                <!--<input type="submit" value="Enviar" onclick="# {indexBean.sendEmail()}"/>-->
+
+                                <h:commandButton value="Enviar" action="#{indexBean.sendEmail()}" type="submit"> </h:commandButton>
+
+
+                            </div>
+                        </h:form>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-discription">
+                            <h4>Mais sobre nós</h4>
+                            <div id="texto">
+
+                            </div>
+                            <p><strong>Endereço:</strong><br/></p>
+                            <div id="endereco">
+                            </div>
+                            <br/><br/>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <div class="copyright-text">
+                                    <p>Copyright &copy; 2016 Green House | CEAVI - UDESC</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="back-to-top">
+                                    <a href="#top">Voltar ao topo</a>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="social-icons">
+                                    <ul>
+                                        <li><a id="facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <!--                                        <li><a href="#" class="#"><i class="fa fa-twitter"></i></a></li>
+                                                                                <li><a href="#" class="#"><i class="fa fa-linkedin"></i></a></li>
+                                                                                <li><a href="#" class="#"><i class="fa fa-rss"></i></a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <!-- Javascripts -->
+        <script>
+            function initialize() {
+                var mapProp = {
+                    center: new google.maps.LatLng(-27.049563, -49.536237),
+                    zoom: 15,
+                    scrollwheel: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+
+                };
+                var map = new google.maps.Map(document.getElementById("templatemo-map")
+                        , mapProp);
+
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(-27.049563, -49.536237),
+                });
+
+                marker.setMap(map);
+
+
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+            google.maps.event.addDomListener(window, 'resize', function ()
+            {
+                map.setCenter(center);
+            });
+        </script>
+        <script >
+            var json = #{indexBean.jsonList};
+
+            $.each(json, function (idx, obj) {
+                inserir(obj.titulo, obj.data, obj.descricao, obj.fixada);
+            });
+
+            function inserir(titulo, data, conteudo, fixada) {
+                var div = $("#cd-timeline");
+                var block = document.createElement("div");
+                var img = document.createElement("div");
+                var i = document.createElement("img");
+
+                var star = document.createElement("i");
+                $(star).addClass("fa");
+                fixada ? $(star).addClass("fa-star") : $(star).addClass("fa-star-o");
+                var text = document.createElement("div");
+                $(block).addClass("cd-timeline-block");
+                $(img).addClass("cd-timeline-img cd-picture");
+
+                //para colocar lápizes nas notícias descomente as 2 linhas abaixo
+                $(i).attr("src", "images/first-icon.png");
+                $(i).attr("alt", "foto");
+
+
+                $(img).append(i);
+                $(block).append(img);
+                $(text).addClass("cd-timeline-content service-box-content");
+
+                var h2 = document.createElement("h2");
+                $(h2).append(star);
+                $(h2).append(" " + titulo);
+                $(text).append(h2);
+
+                var date = new Date(data);
+                $(text).append("<p>" + date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + "</p>");
+
+                $(text).append("<p>" + conteudo + "</p>");
+                $(block).append(text);
+                $(div).append(block);
+            }
+        </script>
+        <script >
+            var conf = #{indexBean.jsonConfig};
+
+
+
+            inserir(conf.sobre, conf.endereco);
+
+            function inserir(sobre, endereco) {
+
+
+
+                var div = $("#texto");
+                $(div).append("<p>" + sobre + "</p>");
+
+
+                var end = $("#endereco");
+                $(end).append("<p>" + endereco + "</p>");
+
+
+
+            }
+        </script>
+
+        <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript" src="js/cycle.js"></script>
+
+
+        <script type="text/javascript" src="js/json_parse.js"></script>
+        <script type="text/javascript" src="js/json_parse_state.js"></script>
+        <script type="text/javascript" src="js/json2.js"></script>
+
+
+
+    </h:body>
+</html>
+

@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title>Green House - Painel de Controle</title>
+        <meta name="description" content=""></meta>
+        <meta name="author" content="templatemo"></meta>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'></link>
+        <link href="css/font-awesome.min.css" rel="stylesheet"></link>
+        <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+        <link href="css/templatemo-style.css" rel="stylesheet"></link>
+    </h:head>
+    <h:body>
+
+
+        <div class="templatemo-flex-row">
+            <div class="templatemo-sidebar">
+                <header class="templatemo-site-header">
+                    <div class="square"></div>
+                    <h1>Green House</h1>
+                </header>
+                <div class="mobile-menu-icon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <nav class="templatemo-left-nav">          
+                    <ul>
+                        <li><a href="home.jsf" ><i class="fa fa-home fa-fw"></i>Visão Geral</a></li>
+                        <li><a href="usuarios.jsf" class="active"><i class="fa fa-users fa-fw"></i>Gerenciar Usuários</a></li>
+                        <li><a href="oficinas.jsf" ><i class="fa fa-wrench fa-fw"></i>Gerenciar Oficinas</a></li>
+                        <li><a href="noticia.jsf" ><i class="fa fa-pencil fa-fw"></i>Gerenciar Noticias</a></li>
+                        <li><a href="atividades.jsf" ><i class="fa fa-calendar-o fa-fw"></i>Registro de Atividades</a></li>
+                        <li><a href="configuracoes.jsf" ><i class="fa fa-gear fa-fw"></i>Configurações</a></li>
+
+                    </ul>  
+                </nav>
+            </div>
+            <div class="templatemo-content col-1 light-gray-bg">
+
+                <div class="templatemo-top-nav-container">
+
+
+                    <div class="row">
+                        <div style="float: left;">
+                            <p class="text-uppercase" style="margin: 0px !important"><i class="fa fa-user"></i> Olá, <h:outputLabel value="#{loginBean.user.nome}" style="margin: 0px !important"/></p>
+                        </div>
+                        <div style="float: right;">
+                            <h:form>
+                                <h:commandLink action="#{loginBean.logout()}" styleClass="text-uppercase text-right">Sair <i class="fa fa-eject fa-fw"></i></h:commandLink>
+                            </h:form>
+
+                        </div>
+                        <!--                            <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                                                        <ul class="text-uppercase">
+                        
+                                                            <li><a href="" class="active">Admin panel</a></li>
+                                                            <li><a href="">Dashboard</a></li>
+                                                            <li><a href="">Overview</a></li>
+                                                            <li><a href="">Sign in form</a></li>
+                                                        </ul>  
+                                                    </nav> -->
+                    </div>
+                </div>
+                <!--                <div class="templatemo-top-nav-container">
+                                    <div class="row">
+                                        <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                                            <ul class="text-uppercase">
+                                                <li><a href="" class="active">Admin panel</a></li>
+                                                <li><a href="">Dashboard</a></li>
+                                                <li><a href="">Overview</a></li>
+                                                <li><a href="">Sign in form</a></li>
+                                            </ul>  
+                                        </nav> 
+                                    </div>
+                                </div>-->
+                <div class="templatemo-content-container">
+                    <div class="templatemo-content-widget white-bg">
+                        <h2 class="margin-bottom-10">Gerenciar Usuários</h2>
+                        <hr/>
+                        <h:form id="form">
+                            <h:panelGrid columns="3" styleClass="margin-bottom-10" >
+                                <p:commandButton id="inserir" value="Inserir"  icon="ui-icon-plus" type="button" onclick="PF('dlg1').show()" />
+                                <p:commandButton id="editar" value="Editar" icon="ui-icon-pencil" actionListener="#{usuarioBean.editar1()}" ajax="false"/>
+                                <p:commandButton value="Remover" icon="ui-icon-closethick" actionListener="#{usuarioBean.remover}" update="form">
+                                    <p:confirm header="Excluir Usuário" message="Você tem certeza que gostaria de excluir o usuário? Esta operação não pode ser desfeita."/>
+                                </p:commandButton>
+                                <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+                                    <p:commandButton value="Sim" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+                                    <p:commandButton value="Não" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+                                </p:confirmDialog>
+                            </h:panelGrid>
+                            <p:growl id="usuariosGrowl" showDetail="true" life="2000"  />  
+                            <p:dataTable widgetVar="tabela" var="user" value="#{usuarioBean.usuarios}" emptyMessage="Não há nada para mostrar" selectionMode="single" selection="#{usuarioBean.selecionado}" rowKey="#{user.usuarioid}" filteredValue="#{usuarioBean.filtrados}">
+                                <p:ajax event="rowSelect" listener="#{usuarioBean.onRowSelect}" update="form:usuariosGrowl, dlg2Form" />
+                                <p:ajax event="rowUnselect" listener="#{usuarioBean.onRowUnselect}" update="form:usuariosGrowl, dlg2Form" />
+                                <f:facet name="header">
+                                    <p:outputPanel style="text-align: left !important">
+                                        <h:outputText value="Pesquisar:" styleClass="margin-right-15"/>
+                                        <p:inputText id="globalFilter" onkeyup="PF('tabela').filter()" style="width:200px; "  placeholder="Insira uma palavra-chave"/>
+                                    </p:outputPanel>
+                                </f:facet>
+                                <p:column headerText="Nome" filterMatchMode="contains" filterBy="#{user.nome}" filterStyle="display:none" >
+                                    <h:outputText value="#{user.nome}" />
+                                </p:column>
+                                <p:column headerText="CPF" filterMatchMode="contains" filterBy="#{user.cpf}" filterStyle="display:none" >
+                                    <h:outputText value="#{user.cpf}"/>
+                                </p:column>
+                                <p:column headerText="Email" filterMatchMode="contains" filterBy="#{user.email}" filterStyle="display:none" >
+                                    <h:outputText value="#{user.email}" />
+                                </p:column>
+                            </p:dataTable> 
+                        </h:form>
+                        <p:dialog header="Inserir Usuário" widgetVar="dlg1" modal="true" resizable="false">
+                            <h:form id="dlg1Form">
+                                <p:growl id="dlg1Growl" showDetail="true" life="2000"  />  
+                                <h:panelGrid columns="2" styleClass="margin-10">
+                                    <p:outputLabel value="Nome:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.novo.nome}" required="true" requiredMessage="É necessário informar um nome"/>
+
+                                    <p:outputLabel value="CPF:" styleClass="margin-bottom-10 margin-right-15" />
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.novo.cpf}" required="true" requiredMessage="É necessário informar um CPF"/>
+
+                                    <p:outputLabel value="E-mail:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.novo.email}" required="true" requiredMessage="É necessário informar um email"/>
+
+                                    <p:outputLabel value="Senha:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.novo.senha}" required="true" requiredMessage="É necessário informar uma senha"/>
+
+                                    <p:outputLabel value="É administrador?" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:selectBooleanButton styleClass="margin-bottom-10" id="value1" value="#{usuarioBean.novo.administrador}" onLabel="Sim" offLabel="Não" style="width:60px" />
+
+                                    <p:outputLabel value="Períodos:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:selectManyMenu id="car" value="#{usuarioBean.longs}" scrollHeight="100" style="width: 350px;">
+                                        <f:selectItems  value="#{usuarioBean.source}" var="periodo"  itemValue="#{periodo.periodoid}" itemLabel="#{periodo}" />
+                                    </p:selectManyMenu>
+
+
+                                </h:panelGrid>
+                                <p:commandButton id="salvar" value="Salvar"  icon="ui-icon-disk" actionListener="#{usuarioBean.inserir}" update="dlg1Form, form" />
+                                <p:commandButton id="inclur" value="Incluir períoodo" icon="ui-icon-plus" type="button" onclick="PF('incluir').show()" />
+                            </h:form>
+                        </p:dialog> 
+                        <p:dialog header="Editar Usuário" widgetVar="dlg2" modal="true" resizable="false">
+                            <h:form id="dlg2Form">
+                                <p:growl id="dlg2Growl" showDetail="true" life="2000"  />  
+                                <h:panelGrid columns="2" styleClass="margin-10">
+                                    <p:outputLabel value="Nome:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.selecionado.nome}" required="true" requiredMessage="É necessário informar um nome"/>
+
+                                    <p:outputLabel value="CPF:" styleClass="margin-bottom-10 margin-right-15" />
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.selecionado.cpf}" required="true" requiredMessage="É necessário informar um CPF"/>
+
+                                    <p:outputLabel value="E-mail:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.selecionado.email}" required="true" requiredMessage="É necessário informar um email"/>
+
+                                    <p:outputLabel value="Senha:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:inputText size="50" styleClass="margin-bottom-10" value="#{usuarioBean.selecionado.senha}" required="true" requiredMessage="É necessário informar uma senha" />
+
+                                    <p:outputLabel value="É administrador?" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:selectBooleanButton styleClass="margin-bottom-10" id="value1" value="#{usuarioBean.selecionado.administrador}" onLabel="Sim" offLabel="Não" style="width:60px" />
+
+                                    <p:outputLabel value="Períodos:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:selectManyMenu id="car" value="#{usuarioBean.longs}" scrollHeight="100" style="width: 350px;">
+                                        <f:selectItems  value="#{usuarioBean.source}" var="periodo"  itemValue="#{periodo.periodoid}" itemLabel="#{periodo}" />
+                                    </p:selectManyMenu>
+                                </h:panelGrid>
+                                <p:commandButton id="salvara" value="Salvar Alterações" icon="ui-icon-disk" actionListener="#{usuarioBean.editar}" update="dlg2Form, form" />
+                                <p:commandButton id="inclur2" value="Incluir períoodo" icon="ui-icon-plus" type="button" onclick="PF('incluir').show()" />
+                            </h:form>
+                        </p:dialog> 
+                        <p:dialog header="Incluir período" widgetVar="incluir" modal="true" resizable="false">
+                            <h:form>
+                                <p:growl id="incluirg" showDetail="true" life="2000"  />  
+                                <h:panelGrid columns="2" styleClass="margin-10">
+                                    <p:outputLabel value="Dia da semana:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:selectOneMenu id="console" value="#{usuarioBean.periodo.diaDaSemana}" style="width:125px" styleClass="margin-bottom-10 margin-right-15">
+                                        <f:selectItem itemLabel="domingo" itemValue="domingo" />
+                                        <f:selectItem itemLabel="segunda-feira" itemValue="segunda-feira" />
+                                        <f:selectItem itemLabel="terça-feira" itemValue="terça-feira" />
+                                        <f:selectItem itemLabel="quarta-feira" itemValue="quarta-feira" />
+                                        <f:selectItem itemLabel="quinta-feira" itemValue="quinta-feira" />
+                                        <f:selectItem itemLabel="sexta-feira" itemValue="sexta-feira" />
+                                        <f:selectItem itemLabel="sábado" itemValue="sábado" />
+                                    </p:selectOneMenu>
+
+                                    <p:outputLabel value="Hora início:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:calendar id="inicio" value="#{usuarioBean.periodo.horaInicio}" pattern="HH:mm" timeOnly="true"  styleClass="margin-bottom-10 margin-right-15"/>
+
+                                    <p:outputLabel value="Hora fim:" styleClass="margin-bottom-10 margin-right-15"/>
+                                    <p:calendar id="fim" value="#{usuarioBean.periodo.horaFim}" pattern="HH:mm" timeOnly="true" styleClass="margin-bottom-10 margin-right-15"/>
+
+                                </h:panelGrid>
+                                <p:commandButton id="incluirb" value="Salvar" icon="ui-icon-disk" actionListener="#{usuarioBean.incluir}" update="dlg1Form, dlg2Form,  incluirg" ajax="true"/>
+                            </h:form>
+                        </p:dialog> 
+                    </div>  
+                    <footer class="text-right">
+                        <p>Copyright &copy; 2016 Green House - UDESC</p>
+                    </footer>         
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- <script src="js/jquery-1.11.2.min.js"></script>       jQuery 
+                <script src="js/jquery-migrate-1.2.1.min.js"></script>   jQuery Migrate Plugin 
+                <script src="https://www.google.com/jsapi"></script>  Google Chart 
+                <script type="text/javascript" src="js/templatemo-script.js"></script>  -->
+
+    </h:body>
+</html>
+

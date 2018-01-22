@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta charset="utf-8"></meta>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title>Green House - Painel de Controle</title>
+        <meta name="description" content=""></meta>
+        <meta name="author" content="templatemo"></meta>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700' rel='stylesheet' type='text/css'></link>
+        <link href="css/font-awesome.min.css" rel="stylesheet"></link>
+        <link href="css/bootstrap.min.css" rel="stylesheet"></link>
+        <link href="css/templatemo-style.css" rel="stylesheet"></link>
+
+    </h:head>
+    <h:body>
+        <div class="templatemo-flex-row">
+            <div class="templatemo-sidebar">
+                <header class="templatemo-site-header">
+                    <div class="square"></div>
+                    <h1>Green House</h1>
+                </header>
+                <div class="mobile-menu-icon">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <nav class="templatemo-left-nav">          
+                    <ul>
+                        <li><a href="home.jsf" ><i class="fa fa-home fa-fw"></i>Visão Geral</a></li>
+                        <li><a href="usuarios.jsf" ><i class="fa fa-user fa-fw"></i>Gerenciar Usuários</a></li>
+                        <li><a href="oficinas.jsf" ><i class="fa fa-wrench fa-fw"></i>Gerenciar Oficinas</a></li>
+                        <li><a href="noticia.jsf"  ><i class="fa fa-pencil fa-fw"></i>Gerenciar Noticias</a></li>
+                        <li><a href="atividades.jsf" ><i class="fa fa-calendar-o fa-fw"></i>Registro de Atividades</a></li>
+                        <li><a href="configuracoes.jsf" class="active"><i class="fa fa-gear fa-fw"></i>Configurações</a></li>
+                        
+                    </ul>  
+                </nav>
+            </div>
+            <!-- Main content --> 
+            <div class="templatemo-content col-1 light-gray-bg">
+                
+                <div class="templatemo-top-nav-container">
+
+
+                    <div class="row">
+                        <div style="float: left;">
+                            <p class="text-uppercase" style="margin: 0px !important"><i class="fa fa-user"></i> Olá, <h:outputLabel value="#{loginBean.user.nome}" style="margin: 0px !important"/></p>
+                        </div>
+                        <div style="float: right;">
+                            <h:form>
+                                <h:commandLink action="#{loginBean.logout()}" styleClass="text-uppercase text-right">Sair <i class="fa fa-eject fa-fw"></i></h:commandLink>
+                            </h:form>
+
+                        </div>
+                        <!--                            <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                                                        <ul class="text-uppercase">
+                        
+                                                            <li><a href="" class="active">Admin panel</a></li>
+                                                            <li><a href="">Dashboard</a></li>
+                                                            <li><a href="">Overview</a></li>
+                                                            <li><a href="">Sign in form</a></li>
+                                                        </ul>  
+                                                    </nav> -->
+                    </div>
+                </div>
+                <!--                <div class="templatemo-top-nav-container">
+                                    <div class="row">
+                                        <nav class="templatemo-top-nav col-lg-12 col-md-12">
+                                            <ul class="text-uppercase">
+                
+                                                <li><a href="" class="active">Admin panel</a></li>
+                                                <li><a href="">Dashboard</a></li>
+                                                <li><a href="">Overview</a></li>
+                                                <li><a href="">Sign in form</a></li>
+                                            </ul>  
+                                        </nav> 
+                                    </div>
+                                </div>-->
+                <div class="templatemo-content-container">
+                    <div class="templatemo-content-widget white-bg">
+                        <h2 class="margin-bottom-10">Configurações</h2>
+                        <hr/>
+                        <h:form>
+                            <p:growl id="growl" showDetail="true" sticky="false" />  
+
+                            <h5>Página Inicial</h5>
+                            <hr/>
+                            <h:panelGrid columns="1" styleClass="width-100 margin-bottom-10">
+                                <p:row styleClass="margin-bottom-10">
+                                    <p:column>
+                                        <h:outputLabel value="Mais sobre nós:" styleClass="margin-bottom-10"></h:outputLabel>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputTextarea value="#{configuracoesBean.configuracao.sobre}" styleClass=" width-100" maxlength="255" required="true" requiredMessage="Campo obrigatório" counter="display1" counterTemplate="{0} caracteres restantes."/>
+                                        <h:outputText id="display1" />
+                                    </p:column>
+                                </p:row>
+                            </h:panelGrid>
+                            <h:panelGrid columns="1" styleClass="width-100 margin-bottom-30">
+                                <p:row>
+                                    <p:column>
+                                        <h:outputLabel value="Endereço:" styleClass="margin-bottom-10   " ></h:outputLabel>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputTextarea value="#{configuracoesBean.configuracao.endereco}" styleClass=" width-100" maxlength="255"  requiredMessage="Campo obrigatório" required="true" counter="display2" counterTemplate="{0} caracteres restantes."/>
+                                        <h:outputText id="display2" />
+                                    </p:column>
+                                </p:row>
+                            </h:panelGrid>
+                            <br/>
+                            <h5>Contato</h5>
+                            <hr/>
+                            <h:panelGrid columns="1" styleClass="width-100 margin-bottom-10">
+                                <p:row styleClass="margin-bottom-10">
+                                    <p:column>
+                                        <h:outputLabel value="E-mail:" styleClass="margin-bottom-10" ></h:outputLabel>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="email" value="#{configuracoesBean.configuracao.email}" styleClass="margin-bottom-10 width-100"  required="true" title="Este será o e-mail para onde serão enviados os formulários preenchidos na página inicial." maxlength="255" requiredMessage="Campo obrigatório" >
+                                            <f:validator validatorId="custom.emailValidator" />
+                                        </p:inputText>
+                                        <p:tooltip id="toolTipFocus" for="email" showEvent="focus" hideEvent="blur"  trackMouse="true" styleClass="margin-bottom-10"/>
+                                    </p:column>
+                                </p:row>
+
+                            </h:panelGrid>
+<!--                            <h:panelGrid columns="1" styleClass="width-100 margin-bottom-10">
+
+                                <p:row >
+                                    <p:column>
+                                        <h:outputLabel value="Página do facebook:" styleClass="margin-bottom-10" ></h:outputLabel>
+                                    </p:column>
+                                    <p:column>
+                                        <p:inputText id="face" value="# {configuracoesBean.configuracao.facebook}" styleClass="margin-bottom-10 width-100">
+                                        </p:inputText>
+                                    </p:column>
+                                </p:row>
+                            </h:panelGrid>-->
+                            <br/>
+                            <p:commandButton value="Salvar" action="#{configuracoesBean.salvar()}" ajax="false"></p:commandButton>
+                        </h:form>
+                    </div>
+                    <footer class="text-right">
+                        <p>Copyright &copy; 2016 Green House - UDESC</p>
+                    </footer>         
+                </div>
+            </div>
+        </div>
+
+
+        <!--        <script src="js/jquery-1.11.2.min.js"></script>       
+                <script src="js/jquery-migrate-1.2.1.min.js"></script>   
+                <script src="https://www.google.com/jsapi"></script>  -->
+        <!--<script type="text/javascript" src="js/templatemo-script.js"></script>-->  
+    </h:body>
+</html>
+
